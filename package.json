@@ -1,0 +1,33 @@
+﻿{
+  "name": "tls-http",
+  "version": "1.0.0",
+  "description": "Browser-like HTTP client for Node.js with fingerprinting, sessions, proxies, and axios-style API.",
+  "main": "src/index.js",
+  "types": "src/types/index.d.ts",
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "require": "./src/index.js",
+      "types": "./src/types/index.d.ts"
+    },
+    "./*": "./src/*"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "examples"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "axios-cookiejar-support": "^6.0.1",
+    "form-data": "^4.0.0",
+    "http-proxy-agent": "^7.0.2",
+    "https-proxy-agent": "^7.0.5",
+    "tough-cookie": "^5.0.0",
+    "undici": "^7.0.0",
+    "ws": "^8.13.0"
+  }
+}
