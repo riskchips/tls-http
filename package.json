@@ -1,10 +1,56 @@
 {
   "name": "tls-http",
-  "version": "1.0.2",
-  "description": "Browser-like HTTP client for Node.js with fingerprinting, sessions, proxies, and axios-style API.",
+  "version": "1.0.4",
+  "description": "Advanced browser-like HTTP client for Node.js with fingerprinting, sessions, proxies, retries, and axios-style API.",
   "main": "src/index.js",
   "types": "src/types/index.d.ts",
   "type": "commonjs",
+
+  "keywords": [
+    "http",
+    "https",
+    "tls",
+    "fetch",
+    "request",
+    "axios",
+    "browser",
+    "browser-like",
+    "browser-client",
+    "fingerprint",
+    "fingerprinting",
+    "spoofing",
+    "session",
+    "cookie",
+    "cookies",
+    "proxy",
+    "http2",
+    "tls-client",
+    "scraping",
+    "scraper",
+    "webscraping",
+    "automation",
+    "web-automation",
+    "network",
+    "request-client",
+    "stealth",
+    "headers",
+    "browser-headers",
+    "chrome",
+    "firefox",
+    "edge",
+    "node-fetch",
+    "undici",
+    "cloudflare",
+    "anti-bot",
+    "retry",
+    "keepalive",
+    "websocket",
+    "client",
+    "api-client"
+  ],
+
+  "main": "src/index.js",
+
   "exports": {
     ".": {
       "require": "./src/index.js",
@@ -12,14 +58,17 @@
     },
     "./*": "./src/*"
   },
+
   "files": [
     "src",
     "README.md",
     "examples"
   ],
+
   "engines": {
     "node": ">=16"
   },
+
   "dependencies": {
     "axios": "^1.9.0",
     "axios-cookiejar-support": "^6.0.1",
