@@ -1,6 +1,6 @@
-﻿{
+{
   "name": "tls-http",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Browser-like HTTP client for Node.js with fingerprinting, sessions, proxies, and axios-style API.",
   "main": "src/index.js",
   "types": "src/types/index.d.ts",
