@@ -82,7 +82,13 @@ class Client {
           requestConfig.httpsAgent = agent
         }
 
-        const rawResponse = await this.axiosInstance.request(requestConfig)
+const axiosConfig = { ...requestConfig }
+
+delete axiosConfig.transport
+delete axiosConfig.http2
+delete axiosConfig.fingerprint
+
+const rawResponse = await this.axiosInstance.request(axiosConfig)
         response = {
           status: rawResponse.status,
           headers: rawResponse.headers,
