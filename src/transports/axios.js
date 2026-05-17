@@ -4,21 +4,21 @@ const http = require('http')
 const https = require('https')
 
 function createAxiosInstance({ jar, timeout = 30000 } = {}) {
-  const httpAgent = new http.Agent({ keepAlive: true, maxSockets: 64 })
-  const httpsAgent = new https.Agent({ keepAlive: true, maxSockets: 64 })
+  const config = {
+    jar,
+    withCredentials: true,
+    timeout,
+    maxRedirects: 5,
+    decompress: true,
+    validateStatus: () => true
+  }
 
-  return wrapper(
-    axios.create({
-      jar,
-      withCredentials: true,
-      timeout,
-      maxRedirects: 5,
-      decompress: true,
-      httpAgent,
-      httpsAgent,
-      validateStatus: () => true
-    })
-  )
+  if (!jar) {
+    config.httpAgent = new http.Agent({ keepAlive: true, maxSockets: 64 })
+    config.httpsAgent = new https.Agent({ keepAlive: true, maxSockets: 64 })
+  }
+
+  return wrapper(axios.create(config))
 }
 
 module.exports = {
